@@ -16,9 +16,25 @@ namespace c_project_mastermind_1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int randomIndex;
+        private string randomColor;
         public MainWindow()
         {
             InitializeComponent();
+            string randomColorOne = GenerateRandomColor();
+            string randomColorTwo = GenerateRandomColor();
+            string randomColorThree = GenerateRandomColor();
+            string randomColorFour = GenerateRandomColor();
+            string colorCode = randomColorOne + ", " + randomColorTwo + ", " + randomColorThree + ", " + randomColorFour;
+            Title = "MasterMind - " + colorCode;
+        }
+        public string GenerateRandomColor()
+        {
+            string[] colors = { "rood", "geel", "oranje", "wit", "groen", "blauw" };
+            Random rnd = new Random();
+            randomIndex = rnd.Next(colors.Length);
+            randomColor = colors[randomIndex];
+            return randomColor;
         }
     }
 }
