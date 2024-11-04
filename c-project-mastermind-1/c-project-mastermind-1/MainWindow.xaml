@@ -7,10 +7,38 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="180" Height="30"/>
-        <ComboBox HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Width="180" Height="30"/>
-        <ComboBox HorizontalAlignment="Left" Margin="400,40,0,0" VerticalAlignment="Top" Width="180" Height="30"/>
-        <ComboBox HorizontalAlignment="Left" Margin="580,40,0,0" VerticalAlignment="Top" Width="180" Height="30"/>
+        <ComboBox HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="180" Height="30">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="blauw"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Width="180" Height="30">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="blauw"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="400,40,0,0" VerticalAlignment="Top" Width="180" Height="30">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="blauw"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="580,40,0,0" VerticalAlignment="Top" Width="180" Height="30">
+            <ComboBoxItem Content="rood"/>
+            <ComboBoxItem Content="geel"/>
+            <ComboBoxItem Content="oranje"/>
+            <ComboBoxItem Content="wit"/>
+            <ComboBoxItem Content="groen"/>
+            <ComboBoxItem Content="blauw"/>
+        </ComboBox>
         <Button Content="Check code" HorizontalAlignment="Left" Margin="220,220,0,0" VerticalAlignment="Top" Width="360"/>
     </Grid>
 </Window>
