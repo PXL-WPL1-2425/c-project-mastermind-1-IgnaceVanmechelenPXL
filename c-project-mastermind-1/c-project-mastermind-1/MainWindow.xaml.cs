@@ -36,5 +36,26 @@ namespace c_project_mastermind_1
             randomColor = colors[randomIndex];
             return randomColor;
         }
+
+        private void comboBoxOne_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string comboBoxOneSelectedItem = comboBoxOne.SelectedItem.ToString();
+            LabelOne.Content = comboBoxOneSelectedItem;
+        }
+        private void comboBoxTwo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string comboBoxTwoSelecetedItem = comboBoxTwo.SelectedItem.ToString();
+            LabelTwo.Content = comboBoxTwoSelecetedItem;
+        }
+        private void comboBoxThree_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string comboBoxThreeSelectedItem = comboBoxThree.SelectedItem.ToString();
+            LabelThree.Content = comboBoxThreeSelectedItem;
+        }
+        private void comboBoxFour_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string comboBoxFourSelectedItem = comboBoxFour.SelectedItem.ToString();
+            LabelFour.Content = comboBoxFourSelectedItem;
+        }
     }
 }
