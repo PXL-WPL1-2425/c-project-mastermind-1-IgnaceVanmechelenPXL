@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Reflection.Emit;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,6 +19,8 @@ namespace c_project_mastermind_1
     {
         private int randomIndex;
         private string randomColor;
+        string[] colors = { "Red", "Yellow", "Orange", "White", "Green", "Blue" };
+        List<string> secretCode = new List<string>();
         public MainWindow()
         {
             InitializeComponent();
@@ -25,37 +28,70 @@ namespace c_project_mastermind_1
             string randomColorTwo = GenerateRandomColor();
             string randomColorThree = GenerateRandomColor();
             string randomColorFour = GenerateRandomColor();
-            string colorCode = randomColorOne + ", " + randomColorTwo + ", " + randomColorThree + ", " + randomColorFour;
-            Title = "MasterMind - " + colorCode;
+
+            secretCode.Add(randomColorOne);
+            secretCode.Add(randomColorTwo);
+            secretCode.Add(randomColorThree);
+            secretCode.Add(randomColorFour);
+
+            Title = "MasterMind - " + string.Join(", ", secretCode);
+
+            foreach (string color in colors)
+            {
+                comboBoxOne.Items.Add(color);
+                comboBoxTwo.Items.Add(color);
+                comboBoxThree.Items.Add(color);
+                comboBoxFour.Items.Add(color);
+            }
         }
         public string GenerateRandomColor()
         {
-            string[] colors = { "rood", "geel", "oranje", "wit", "groen", "blauw" };
             Random rnd = new Random();
             randomIndex = rnd.Next(colors.Length);
             randomColor = colors[randomIndex];
             return randomColor;
         }
+        private void ComboBox_SelectionChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
 
-        private void comboBoxOne_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string comboBoxOneSelectedItem = comboBoxOne.SelectedItem.ToString();
-            LabelOne.Content = comboBoxOneSelectedItem;
+            if (comboBox != null && comboBox.SelectedItem != null)
+            {
+                string selectedColor = comboBox.SelectedItem.ToString();
+                SolidColorBrush brush = GetBrushFromColorName(selectedColor);
+
+                if (comboBox == comboBoxOne)
+                {
+                    labelOne.Content = selectedColor;
+                    labelOne.Background = brush;
+                }
+                else if (comboBox == comboBoxTwo)
+                {
+                    labelTwo.Content = selectedColor;
+                    labelTwo.Background = brush;
+                }
+                else if (comboBox == comboBoxThree)
+                {
+                    labelThree.Content = selectedColor;
+                    labelThree.Background = brush;
+                }
+                else if (comboBox == comboBoxFour)
+                {
+                    labelFour.Content = selectedColor;
+                    labelFour.Background = brush;
+                }
+            }
         }
-        private void comboBoxTwo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private SolidColorBrush GetBrushFromColorName(string colorName)
         {
-            string comboBoxTwoSelecetedItem = comboBoxTwo.SelectedItem.ToString();
-            LabelTwo.Content = comboBoxTwoSelecetedItem;
-        }
-        private void comboBoxThree_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string comboBoxThreeSelectedItem = comboBoxThree.SelectedItem.ToString();
-            LabelThree.Content = comboBoxThreeSelectedItem;
-        }
-        private void comboBoxFour_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string comboBoxFourSelectedItem = comboBoxFour.SelectedItem.ToString();
-            LabelFour.Content = comboBoxFourSelectedItem;
+            try
+            {
+                return (SolidColorBrush)new BrushConverter().ConvertFromString(colorName);
+            }
+            catch
+            {
+                return Brushes.Transparent;
+            }
         }
     }
 }

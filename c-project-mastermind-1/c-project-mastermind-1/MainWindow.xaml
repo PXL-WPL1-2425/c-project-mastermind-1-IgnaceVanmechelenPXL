@@ -7,42 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ComboBox Name="comboBoxOne" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="comboBoxOne_SelectionChanged">
-            <ComboBoxItem Content="rood"/>
-            <ComboBoxItem Content="geel"/>
-            <ComboBoxItem Content="oranje"/>
-            <ComboBoxItem Content="wit"/>
-            <ComboBoxItem Content="groen"/>
-            <ComboBoxItem Content="blauw"/>
-        </ComboBox>
-        <ComboBox Name="comboBoxTwo" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="comboBoxTwo_SelectionChanged">
-            <ComboBoxItem Content="rood"/>
-            <ComboBoxItem Content="geel"/>
-            <ComboBoxItem Content="oranje"/>
-            <ComboBoxItem Content="wit"/>
-            <ComboBoxItem Content="groen"/>
-            <ComboBoxItem Content="blauw"/>
-        </ComboBox>
-        <ComboBox Name="comboBoxThree" HorizontalAlignment="Left" Margin="400,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="comboBoxThree_SelectionChanged">
-            <ComboBoxItem Content="rood"/>
-            <ComboBoxItem Content="geel"/>
-            <ComboBoxItem Content="oranje"/>
-            <ComboBoxItem Content="wit"/>
-            <ComboBoxItem Content="groen"/>
-            <ComboBoxItem Content="blauw"/>
-        </ComboBox>
-        <ComboBox Name="comboBoxFour" HorizontalAlignment="Left" Margin="580,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="comboBoxFour_SelectionChanged">
-            <ComboBoxItem Content="rood"/>
-            <ComboBoxItem Content="geel"/>
-            <ComboBoxItem Content="oranje"/>
-            <ComboBoxItem Content="wit"/>
-            <ComboBoxItem Content="groen"/>
-            <ComboBoxItem Content="blauw"/>
-        </ComboBox>
-        <Button Content="Check code" HorizontalAlignment="Left" Margin="220,220,0,0" VerticalAlignment="Top" Width="360"/>
-        <Label Content="" Name="LabelOne" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
-        <Label Content="" Name="LabelTwo" HorizontalAlignment="Left" Margin="220,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
-        <Label Content="" Name="LabelThree" HorizontalAlignment="Left" Margin="400,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
-        <Label Content="" Name="LabelFour" HorizontalAlignment="Left" Margin="580,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
+        <ComboBox Name="comboBoxOne" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBoxTwo" HorizontalAlignment="Left" Margin="220,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBoxThree" HorizontalAlignment="Left" Margin="400,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="ComboBox_SelectionChanged"/>
+        <ComboBox Name="comboBoxFour" HorizontalAlignment="Left" Margin="580,40,0,0" VerticalAlignment="Top" Width="180" Height="30" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button Name="CheckCodeButton" Content="Check code" HorizontalAlignment="Left" Margin="220,220,0,0" VerticalAlignment="Top" Width="360"/>
+        <Label Content="" Name="labelOne" HorizontalAlignment="Left" Margin="40,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
+        <Label Content="" Name="labelTwo" HorizontalAlignment="Left" Margin="220,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
+        <Label Content="" Name="labelThree" HorizontalAlignment="Left" Margin="400,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
+        <Label Content="" Name="labelFour" HorizontalAlignment="Left" Margin="580,70,0,0" VerticalAlignment="Top" Height="150" Width="180"/>
     </Grid>
 </Window>
