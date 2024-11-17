@@ -93,5 +93,48 @@ namespace c_project_mastermind_1
                 return Brushes.Transparent;
             }
         }
+        private void CheckCodeButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> userColors = new List<string>();
+            userColors.Add(comboBoxOne.SelectedItem?.ToString());
+            userColors.Add(comboBoxTwo.SelectedItem?.ToString());
+            userColors.Add(comboBoxThree.SelectedItem?.ToString());
+            userColors.Add(comboBoxFour.SelectedItem?.ToString());
+
+            for (int i = 0; i < userColors.Count; i++)
+            {
+                if (userColors[i] == secretCode[i])
+                {
+                    SetLabelBorder(i, Colors.DarkRed);
+                }
+                else if (secretCode.Contains(userColors[i]))
+                {
+                    SetLabelBorder(i, Colors.Wheat);
+                }
+            }
+        }
+        private void SetLabelBorder(int index, Color borderColor)
+        {
+            SolidColorBrush brush = new SolidColorBrush(borderColor);
+            switch (index)
+            {
+                case 0:
+                    labelOne.BorderBrush = brush;
+                    labelOne.BorderThickness = new Thickness(3);
+                    break;
+                case 1:
+                    labelTwo.BorderBrush = brush;
+                    labelTwo.BorderThickness = new Thickness(3);
+                    break;
+                case 2:
+                    labelThree.BorderBrush = brush;
+                    labelThree.BorderThickness = new Thickness(3);
+                    break;
+                case 3:
+                    labelFour.BorderBrush = brush;
+                    labelFour.BorderThickness = new Thickness(3);
+                    break;
+            }
+        }
     }
 }
